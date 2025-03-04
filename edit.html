@@ -1,0 +1,51 @@
+<html lang="en">
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   Edit Note
+  </title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet"/>
+  <link href="static/styles.css" rel="stylesheet"/>
+ </head>
+ <body class="bg-gray-100">
+  <!-- Header -->
+  <header class="bg-blue-600 text-white p-4">
+   <div class="container mx-auto flex justify-between items-center">
+    <h1 class="text-3xl font-bold">NotepadGO</h1>
+   </div>
+  </header>
+  <!-- Edit Note Page -->
+  <div class="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+   <div class="w-full max-w-md">
+    <div class="flex justify-between items-center mb-4">
+     <a href="/" class="text-blue-600"><i class="fas fa-arrow-left text-xl"></i></a>
+     <h1 class="text-2xl font-semibold">
+      Edit Note
+     </h1>
+     <button class="text-green-600"><i class="fas fa-check text-xl"></i></button>
+    </div>
+    <form action="/edit?id={{.ID}}" method="post">
+     <div class="mb-4">
+      <label for="title" class="block text-gray-700">Title</label>
+      <input type="text" id="title" name="title" class="w-full p-2 border border-gray-300 rounded mt-1" value="{{.Title}}" required>
+     </div>
+     <div class="mb-4">
+      <label for="content" class="block text-gray-700">Content</label>
+      <textarea id="content" name="content" class="w-full p-2 border border-gray-300 rounded mt-1" required>{{.Content}}</textarea>
+     </div>
+     <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded">Update</button>
+    </form>
+   </div>
+  </div>
+  <!-- Bottom Navigation -->
+  <div class="fixed bottom-0 left-0 right-0 bg-black text-white flex justify-around items-center py-2">
+   <a href="/" class="text-white"><i class="fas fa-home text-xl"></i></a>
+   <a href="#" class="text-white"><i class="fas fa-search text-xl"></i></a>
+   <a href="/create" class="text-white"><i class="fas fa-plus-circle text-2xl"></i></a>
+   <a href="#" class="text-white"><i class="fas fa-bell text-xl"></i></a>
+   <a href="#" class="text-white"><i class="fas fa-user text-xl"></i></a>
+  </div>
+ </body>
+</html>
